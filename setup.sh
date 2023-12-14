@@ -2,8 +2,8 @@
 
 echo "Setting up Remote compute node";
 
-mkdir data
-mkdir src
+mkdir ~/data
+mkdir ~/src
 
 echo "Enter GitHub Username";
 read git_user;
