@@ -14,6 +14,7 @@ read git_mail;
 git config --global user.email $git_mail;
 
 echo "Installing applications";
-apt install vim;
-apt install aria2
+apt -y install vim;
+apt -y install unzip;
+apt -y install aria2;
 
