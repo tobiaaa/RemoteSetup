@@ -13,6 +13,8 @@ echo "Enter GitHub E-Mail";
 read git_mail;
 git config --global user.email $git_mail;
 
+git config --global credential.helper store
+
 echo "Installing applications";
 apt -y install vim;
 apt -y install unzip;
