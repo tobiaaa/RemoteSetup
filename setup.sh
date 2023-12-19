@@ -19,4 +19,4 @@ echo "Installing applications";
 apt -y install vim;
 apt -y install unzip;
 apt -y install aria2;
-
+apt -y install nano;
