@@ -5,15 +5,42 @@ echo "Setting up Remote compute node";
 mkdir ~/data
 mkdir ~/src
 
-echo "Enter GitHub Username";
-read git_user;
-git config --global user.name $git_user;
+# Default values
+username=""
+email=""
 
-echo "Enter GitHub E-Mail";
-read git_mail;
+# Parse command line options
+while getopts ":u:e:" opt; do
+  case ${opt} in
+    u )
+      username=$OPTARG
+      ;;
+    e )
+      email=$OPTARG
+      ;;
+    \? )
+      echo "Invalid option: $OPTARG" 1>&2
+      ;;
+    : )
+      echo "Invalid option: $OPTARG requires an argument" 1>&2
+      ;;
+  esac
+done
+shift $((OPTIND -1))
+
+# If username or email were not provided as command-line arguments, prompt the user
+if [ -z "$username" ]; then
+  read -p "Enter your GitHub username: " username
+fi
+
+if [ -z "$email" ]; then
+  read -p "Enter your GitHub email: " email
+fi
+
+git config --global user.name $git_user;
 git config --global user.email $git_mail;
 
 echo "Installing applications";
 apt install vim;
 apt install aria2
-
+apt install build-essential
