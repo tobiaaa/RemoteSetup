@@ -43,9 +43,4 @@ git config --global user.email $git_mail;
 git config --global credential.helper store
 
 echo "Installing applications";
-apt -y install vim;
-apt -y install unzip;
-apt -y install aria2;
-apt -y install nano;
-apt -y install build-essential;
-apt -y install zip;
+sudo apt -y install vim unzip zip aria2 nano build-essential
