@@ -40,7 +40,7 @@ fi
 git config --global user.name $git_user;
 git config --global user.email $git_mail;
 
-git config --global credential.helper store
+git config --global credential.helper store;
 
 echo "Installing applications";
-sudo apt -y install vim unzip zip aria2 nano build-essential
+sudo apt -y install vim unzip zip aria2 nano build-essential stow;
