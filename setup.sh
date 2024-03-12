@@ -43,4 +43,13 @@ git config --global user.email $git_mail;
 git config --global credential.helper store;
 
 echo "Installing applications";
-sudo apt -y install vim unzip zip aria2 nano build-essential stow;
+sudo apt -y install vim unzip zip aria2 nano build-essential stow fzf;
+
+# zoxide
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash;
+
+echo 'eval "$(zoxide init --cmd cd bash)"' >> ~/.bashrc
+echo '[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh' >> ~/.bashrc
+
+source ~/.bashrc
+
